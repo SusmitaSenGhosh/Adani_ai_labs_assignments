@@ -62,7 +62,7 @@ def main(video_path, output_path, skip_frames = 10):
 
 # Example usage
 if __name__ == "__main__":
-    video_file = "/content/drive/MyDrive/panorama_gen/panorama_v3.mp4"  # Change to your video file
-    output_file ="/content/drive/MyDrive/panorama_gen/panorama_v3.jpg" # change to your output file
-    skip_frames = 10 # define
+    video_file = "./inputs/video_input_panorama.mp4"  # Change to your video file
+    output_file ="./ouputs/output_panorama.jpg" # change to your output file
+    skip_frames = 1 # skip frames
     main(video_file,output_file)

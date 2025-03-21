@@ -82,34 +82,10 @@ def detect_objects(image,output_path_OD):
 
 # Example usage
 if __name__ == "__main__":
-    video_file = "/content/drive/MyDrive/panorama_gen/object_detection_video8.mp4"  # Change to your video file
-    output_file ="/content/drive/MyDrive/panorama_gen/panorama_v8.jpg"              # change to your output file to save the panorama
+    video_file = "/inputs/input_object_count_video.mp4"  # Change to your video file
+    output_file ="/outputs/output_panorama_object_count.jpg"              # change to your output file to save the panorama
     skip_frames =  50
     image = create_panorama(video_file,output_file,skip_frames)
-    output_file_OD ="/content/drive/MyDrive/panorama_gen/panorama_v8_OD.jpg"              # change to your output file to save the panorama
+    output_file_OD ="/outputs/output_object_count.jpg"              # change to your output file to save the panorama
     object_count = detect_objects(image,output_file_OD)
     print("Number of objects are :", object_count )
-
-import cv2
-# import numpy as np
-from ultralytics import YOLO
-# # from sklearn.cluster import DBSCAN
-# from google.colab.patches import cv2_imshow
-# from skimage.feature import local_binary_pattern
-# from scipy.spatial.distance import euclidean
-from google.colab.patches import cv2_imshow
-
-# Load the YOLOv8 model
-model = YOLO("yolov8s.pt")  # Use a pretrained YOLO model
-image = cv2.imread("/content/drive/MyDrive/panorama_gen/panorama_v8.jpg")
-results = model(image)
-# cv2_imshow(image)
-
-for box in results[0].boxes.xyxy:  # Bounding boxes
-    x1, y1, x2, y2 = map(int, box[:4])
-    # conf = float(box[4])  # Confidence score
-    # label = results.names[int(box[5])]  # Object class name
-    cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-    # cv2.putText(image, f"{label} {conf:.2f}", (x1, y1 - 10),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
-cv2_imshow(image)
