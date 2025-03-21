@@ -4,6 +4,6 @@
 Project Overview
 This repository includes three main scripts:
 
-panorama_from_video.py – Generates a panorama image from an input video by stitching frames.
-panorama_object_count.py – Creates a panorama from the video and counts distinct objects.
-framewise_object_count.py – Counts distinct objects by detecting them frame by frame.
+panorama_genration.py – Generates a panorama image from an input video by stitching frames.
+count_distinct_objects.py – Creates a panorama from the video and counts distinct objects.
+count_object_from_panorama.py – Counts distinct objects by detecting them frame by frame.
